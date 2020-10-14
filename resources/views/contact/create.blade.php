@@ -14,44 +14,59 @@
                         </div>
                     @endif
 
-                    createです
                     <form method="POST" action="{{route('contact.store')}}">
                         @csrf
-                        氏名
-                        <input type="text" name="your_name">
-                        <br>
-                        件名
-                        <input type="text" name="title">
-                        <br>
-                        メールアドレス
-                        <input type="email" name="email">
-                        <br>
-                        ホームページ
-                        <input type="url" name="url">
-                        <br>
-                        性別
-                        <input type="radio" name="gender" value="0">男性</input>
-                        <input type="radio" name="gender" value="0">女性</input>
-                        <br>
-                        年齢
-                        <select name="age">
-                            <option value="">選択してください</option>
-                            <option value="1">〜19歳</option>
-                            <option value="2">20歳〜29歳</option>
-                            <option value="3">30歳〜39歳</option>
-                            <option value="4">40歳〜49歳</option>
-                            <option value="5">50歳〜59歳</option>
-                            <option value="6">60歳〜</option>
-                        </select>
-                        <br>
-                        お問い合わせ内容
-                        <textarea name="contact" cols="30" rows="10"></textarea>
-                        <br>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>名前</th>
+                                    <td><input type="text" name="your_name"></td>
+                                </tr>
+                                <tr>
+                                    <th>メールアドレス</th>
+                                    <td><input type="email" name="email"></td>
+                                </tr>
+                                <tr>
+                                    <th>性別</th>
+                                    <td>
+                                        <input type="radio" name="gender" value="0">男性</input>
+                                        <input type="radio" name="gender" value="0">女性</input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>年齢</th>
+                                    <td>
+                                        <select name="age">
+                                            <option value="">選択してください</option>
+                                            <option value="1">〜19歳</option>
+                                            <option value="2">20歳〜29歳</option>
+                                            <option value="3">30歳〜39歳</option>
+                                            <option value="4">40歳〜49歳</option>
+                                            <option value="5">50歳〜59歳</option>
+                                            <option value="6">60歳〜</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>URL</th>
+                                    <td><input type="url" name="url"></td>
+                                </tr>
+                                <tr>
+                                    <th>タイトル</th>
+                                    <td><input type="text" name="title"></td>
+                                </tr>
+                                <tr>
+                                    <th>お問い合わせ内容</th>
+                                    <td><textarea name="contact" cols="40" rows="10"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="center" style="text-aline: center;">
+                            <input type="checkbox" name="caution" value="1">注意事項に同意する</input>    
+                            <br>
 
-                        <input type="checkbox" name="caution" value="1">注意事項に同意する</input>    
-                        <br>
-
-                        <input class="btn btn-info" type="submit" value="登録する">
+                            <input class="btn btn-info" type="submit" value="登録する">
+                        </div>
                     </form>
                 </div>
             </div>

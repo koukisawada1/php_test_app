@@ -13,26 +13,38 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4">
-                            <p>名前：</p>
-                            <p>タイトル：</p>
-                            <p>メールアドレス：</p>
-                            <p>URL：</p>
-                            <p>性別：</p>
-                            <p>年齢：</p>
-                            <p>内容：</p>
-                        </div>
-                        <div class="col-md-8 col-sm-8">
-                            <p>{{ $contact->your_name }}</p>
-                            <p>{{ $contact->title }}</p>
-                            <p>{{ $contact->email }}</p>
-                            <p>{{ $contact->url }}</p>
-                            <p>{{ $gender }}</p>
-                            <p>{{ $age }}</p>
-                            <p>{{ $contact->contact }}</p>
-                        </div>
-                    </div>
+                    <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>名前</th>
+                                    <td>{{ $contact->your_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>メールアドレス</th>
+                                    <td>{{ $contact->email }}</td>
+                                </tr>
+                                <tr>
+                                    <th>性別</th>
+                                    <td>{{ $gender }}</td>
+                                </tr>
+                                <tr>
+                                    <th>年齢</th>
+                                    <td>{{ $age }}</td>
+                                </tr>
+                                <tr>
+                                    <th>URL</th>
+                                    <td><a href="#">{{ $contact->url }}</a></td>
+                                </tr>
+                                <tr>
+                                    <th>タイトル</th>
+                                    <td>{{ $contact->title }}</td>
+                                </tr>
+                                <tr>
+                                    <th>お問い合わせ内容</th>
+                                    <td>{{ $contact->contact }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     
 
                     <form method="GET" action="{{route('contact.edit', ['id' => $contact->id ])}}">
