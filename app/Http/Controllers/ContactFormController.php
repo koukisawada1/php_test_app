@@ -8,6 +8,8 @@ use App\Models\ContactForm;
 // 厳選したデータを持ってくる
 use Illuminate\support\Facades\DB;
 use App\Services\CheckFormData;
+// バリテーションファイルの読み込み
+use App\Http\Requests\StoreContactForm;
 
 class ContactFormController extends Controller
 {
@@ -47,7 +49,7 @@ class ContactFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreContactForm $request)
     {
         $contact = new ContactForm;
 

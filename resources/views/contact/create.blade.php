@@ -14,6 +14,17 @@
                         </div>
                     @endif
 
+                    <!-- エラーの内容を表示する -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <form method="POST" action="{{route('contact.store')}}">
                         @csrf
                         <table class="table">
