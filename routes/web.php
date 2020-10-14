@@ -16,6 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('tests/test', 'TestController@index');
+
+//'middleware' => 'auth' 認証(ログイン)されていいたらアクションを実行する
+Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
+    Route::get('index', 'ContactFormController@index')->name('contact.index');
+    Route::get('create', 'ContactFormController@create')->name('contact.create');
+});
+
+// Route::resource('contacts', 'ContactFormController')->only([
+//     'index', 'show'
+// ]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

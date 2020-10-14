@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ContactFromController extends Controller
+class ContactFormController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class ContactFromController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view('contact.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class ContactFromController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact.create');
     }
 
     /**
