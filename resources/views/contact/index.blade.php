@@ -41,6 +41,10 @@
                             @endforeach
                         <tbody>
                     </table>
+
+                    <!-- ページネーションボタン -->
+                    {{ $contacts->links() }}
+
                 </div>
             </div>
         </div>
