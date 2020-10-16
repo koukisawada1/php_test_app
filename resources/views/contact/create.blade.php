@@ -24,9 +24,10 @@
                             </ul>
                         </div>
                     @endif
-
+                
                     <form method="POST" action="{{route('contact.store')}}">
                         @csrf
+                        
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -68,14 +69,15 @@
                                 </tr>
                                 <tr>
                                     <th>お問い合わせ内容</th>
-                                    <td><textarea name="contact" cols="40" rows="10"></textarea></td>
+                                    <td><textarea name="contact[]" cols="40" rows="10"></textarea></td>
                                 </tr>
                             </tbody>
                         </table>
+
                         <div class="center" style="text-aline: center;">
                             <input type="checkbox" name="caution" value="1">注意事項に同意する</input>    
                             <br>
-
+                        
                             <input class="btn btn-info" type="submit" value="登録する">
                             
                         </div>

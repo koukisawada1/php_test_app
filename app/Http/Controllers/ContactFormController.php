@@ -51,7 +51,7 @@ class ContactFormController extends Controller
         };
 
         $query->select('id', 'your_name', 'title', 'created_at');
-        $query->orderby('created_at', 'asc');
+        $query->orderby('created_at', 'desc');
         $contacts = $query->paginate(20);
 
         // compact('contacts' 変数をviewに渡す
@@ -76,6 +76,8 @@ class ContactFormController extends Controller
      */
     public function store(StoreContactForm $request)
     {
+        $i = 0;
+        // foreach($request->num as $val){
         $contact = new ContactForm;
 
         $contact->your_name = $request->input('your_name');
@@ -87,6 +89,9 @@ class ContactFormController extends Controller
         $contact->contact = $request->input('contact');
 
         $contact->save();
+        
+        // $i++;
+        }
 
         return redirect('contact/index');
         // dd($your_name);
